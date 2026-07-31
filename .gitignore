@@ -1,0 +1,24 @@
+# Dependencies / local installs
+.deps/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Build / packaging
+build_windows/
+dist/
+*.exe
+*.spec
+
+# OS / editor
+.DS_Store
+.cursor/
+*.swp
+*~
+
+# Local data / reports (keep code, not generated PDFs by default)
+*.pdf
+Replacement_Monday_*.pdf
