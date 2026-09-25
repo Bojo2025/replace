@@ -379,3 +379,13 @@ When the user opens this project in Cursor on Windows:
 ---
 
 *End of handoff document.*
+
+---
+
+## Web app (GitHub Pages)
+
+The mobile web version lives in **`docs/`** (required folder name for GitHub Pages).
+
+- Handoff: `docs/PROJECT_HANDOFF.md`
+- Site: https://bojo2025.github.io/replace/
+- Pages setting: branch `main`, folder `/docs`
