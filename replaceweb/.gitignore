@@ -1,0 +1,33 @@
+### synced-defaults ###
+# Dependencies and virtual environments
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.deps/
+*.egg-info/
+
+# Build output and large binaries
+dist/
+build/
+*.apk
+*.aab
+*.tpz
+*.exe
+*.dmg
+*.zip
+
+# OS and editor noise
+.DS_Store
+*.swp
+*~
+
+# Secrets and logs
+.env
+.env.local
+*.log
+
+# Transfer package
+replaceweb-for-M5.zip

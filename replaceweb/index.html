@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a1a2e">
+<title>Teacher Replacement - BR SSS</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Loading -->
+  <div id="loading-screen">
+    <div class="loading-logo">BR</div>
+    <div class="loading-sub" id="loading-msg">Loading timetable...</div>
+    <div class="spinner"></div>
+    <div class="loading-error" id="loading-error" style="display:none"></div>
+  </div>
+
+  <!-- Main app -->
+  <div id="app-main" style="display:none; flex-direction:column; min-height:100vh; width:100%;">
+
+    <header class="topbar">
+      <div class="topbar-row">
+        <div>
+          <div class="topbar-title">BR SSS Replacement</div>
+          <div class="topbar-sub" id="topbar-sub">Teacher Replacement System</div>
+          <div class="topbar-crumb" id="crumb"></div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
+          <span class="badge-day" id="day-badge" style="display:none"></span>
+          <button type="button" class="btn-ghost" id="btn-start-over"
+            style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff; padding:6px 10px; font-size:11px;">
+            Start over
+          </button>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step-pill active" data-step="1">1 - Select</div>
+        <div class="step-pill" data-step="2">2 - Assign</div>
+        <div class="step-pill" data-step="3">3 - Export</div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- Screen 1 -->
+      <section id="screen-select" class="screen">
+        <h1 class="page-title">New replacement sheet</h1>
+        <p class="page-sub">Pick the day, then mark every absent teacher.</p>
+
+        <div class="section-label">Day</div>
+        <div class="day-grid" id="day-grid"></div>
+
+        <div class="section-label">Absent teachers</div>
+        <div class="search-row">
+          <input class="search-input" id="search-input" type="search"
+                 placeholder="Search teachers..." autocomplete="off" enterkeyhint="search">
+          <button type="button" class="btn-ghost" id="btn-select-all">All</button>
+          <button type="button" class="btn-ghost" id="btn-clear-all">Clear</button>
+        </div>
+        <div class="absent-count" id="absent-count">No teachers marked absent</div>
+        <div class="teacher-list" id="teacher-list"></div>
+      </section>
+
+      <!-- Screen 2 -->
+      <section id="screen-assign" class="screen">
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label"></div>
+        <div class="absent-banner">
+          <div class="label">Absent teacher</div>
+          <div class="name" id="absent-name"></div>
+        </div>
+        <div class="section-label">Periods to cover</div>
+        <div id="period-list"></div>
+      </section>
+
+      <!-- Screen 3 -->
+      <section id="screen-review" class="screen">
+        <h1 class="page-title">Review &amp; export</h1>
+        <p class="page-sub">Check assignments, then download the PDF sheet.</p>
+        <div class="summary-chips" id="summary-chips"></div>
+        <div id="review-groups"></div>
+      </section>
+
+    </main>
+
+    <div class="bottom-bar" id="bottom-bar"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Libraries (CDN) -->
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
+
+<script src="js/data-loader.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

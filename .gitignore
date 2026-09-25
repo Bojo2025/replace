@@ -22,3 +22,5 @@ dist/
 # Local data / reports (keep code, not generated PDFs by default)
 *.pdf
 Replacement_Monday_*.pdf
+
+replaceweb/replaceweb-for-M5.zip
