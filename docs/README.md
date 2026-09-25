@@ -1,39 +1,28 @@
 # BR SSS Teacher Replacement — Web App
 
-Mobile-friendly web version of the Teacher Replacement System.
-Same workflow: select day, mark absent teachers, assign replacements, download PDF.
+**Copy this whole `docs` folder to your M5.** That is everything you need for the web version.
 
-This folder (`docs/`) is what **GitHub Pages** publishes.
+You do **not** need the big parent `replace` project or the old desktop software.
 
-## Live site
+## On the M5
 
-After Pages is enabled (`main` → `/docs`):
-
-https://bojo2025.github.io/replace/
-
-## Run locally
+1. Open the `docs` folder in Cursor.
+2. Run:
 
 ```bash
-cd docs
+cd /path/to/docs
 python3 -m http.server 8080
 ```
 
-Open: http://localhost:8080
+3. Open http://localhost:8080
 
-## Layout
+Or use the live site: https://bojo2025.github.io/replace/
 
-```
-docs/
-  index.html
-  css/app.css
-  js/          data-loader.js, logic.js, pdf.js, app.js
-  data/latest-20-april.xlsx
-  PROJECT_HANDOFF.md
-  .nojekyll
-```
+Read **PROJECT_HANDOFF.md** for full details (rules, Excel format, agent instructions).
 
-## Business rules
+## Contents
 
-Same as desktop: part-time MWF / Tue-Thu, OFF in P8-P9 cannot cover, no double-booking.
-
-See PROJECT_HANDOFF.md for full details.
+- `index.html` — app
+- `css/`, `js/` — code
+- `data/latest-20-april.xlsx` — timetable (required)
+- `PROJECT_HANDOFF.md` — full handoff for Cursor on M5
